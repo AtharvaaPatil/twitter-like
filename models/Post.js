@@ -6,12 +6,12 @@ const PostSchema = new mongoose.Schema({
         required:[true, 'Please add a title'],
         unique: true,
         trim: true,
-        maxLength: [40, 'Title cannot be more than 40 characters']
+        maxlength: [40, 'Title cannot be more than 40 characters']
     },
     description:{
         type: String,
         required: true,
-        maxLength: [120, 'Description cannot be more than 120 characters']
+        maxlength: [120, 'Description cannot be more than 120 characters']
     }
 })
 
