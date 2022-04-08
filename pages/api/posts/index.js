@@ -9,11 +9,12 @@ export default async (req, res) => {
     switch(method){
         case 'GET':
             try {
-                const notes = await Post.find({});
+                const posts = await Post.find({});
 
                 res.status(200).json({success:true, data: posts})
             } catch (error) {
                 res.status(400).json({success: false});
+                // console.log(error);
             }
             break;
         case 'POST':
