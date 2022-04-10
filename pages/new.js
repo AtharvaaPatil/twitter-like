@@ -24,6 +24,23 @@ const NewPost = () => {
         }
     }, [errors])
 
+    const createNote = async() => {
+        try{
+            const res = await fetch('http://localhost:3000/api/posts', {
+                method: 'POST',
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(form)
+            })
+
+            router.push("/");
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         let errs = validate();
@@ -60,6 +77,7 @@ const NewPost = () => {
                     <Form onSubmit={handleSubmit}>
                         <Form.Input 
                             fluid
+                            error={errors.title ? { content : 'Please enter a title', pointing: 'below'} : null}
                             label='Title'
                             placeholder='Title'
                             name='title'
@@ -67,6 +85,7 @@ const NewPost = () => {
                         />
                         <Form.TextArea 
                             fluid
+                            error={errors.description ? { content : 'Please enter a description', pointing: 'below'} : null}
                             label='Description'
                             placeholder='Description'
                             name='description'
