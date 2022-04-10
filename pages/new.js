@@ -24,7 +24,7 @@ const NewPost = () => {
         }
     }, [errors])
 
-    const createNote = async() => {
+    const createPost = async() => {
         try{
             const res = await fetch('http://localhost:3000/api/posts', {
                 method: 'POST',
