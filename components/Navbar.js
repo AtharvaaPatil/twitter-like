@@ -1,7 +1,7 @@
 import Link from 'next/link';
 // Link component used to route to home page
 
-const Navbar = () => {
+const Navbar = () => (
     <nav className='navbar'>
         <Link href = "/">
             <a className='navbar-brand'>Post app</a>
@@ -10,6 +10,6 @@ const Navbar = () => {
             <a className='create'>Create Post</a>
         </Link>
     </nav>
-}
+)
 
 export default Navbar
