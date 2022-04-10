@@ -15,8 +15,7 @@ const NewPost = () => {
     useEffect(() => {
         if(isSubmitting) {
             if(Object.keys(errors).length === 0){
-                // createPost();
-                alert('Success')
+                createPost();
             }
             else{
                 setIsSubmitting(false);
